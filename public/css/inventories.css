@@ -1,0 +1,268 @@
+body{
+    margin: 0;
+    overflow: hidden;
+}
+
+#navbar{
+    height: 40%;
+    width: 100%;
+    background-color:  #44A130;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo2{
+    margin-left: 30px;
+}
+
+.green-text {
+    color: #44A130;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'BARABARA-FINAL', sans-serif;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ffffff;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: var(--sds-typography-weight-extra-bold);
+    line-height: normal;
+}
+
+/* Class for pink text */
+.pink-text {
+    color: #FF007F;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'BARABARA-FINAL', sans-serif;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ffffff;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: var(--sds-typography-weight-extra-bold);
+    line-height: normal;
+}
+.dropbtn{
+    height: 50px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    color: white;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .dropbtn i {
+    margin-right: 8px;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+    border-radius: 40px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 250px;
+    height: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: -190px;
+  }
+  #info{
+    margin: 0;
+  }
+  .infos{
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .infor{
+    font-family: sans-serif;
+    color: rgb(125, 125, 125);
+  }
+  #meow{
+    margin-right: 10px;
+  }
+  #profile2{
+    height: 40px;
+    cursor: pointer;
+  }
+  #profile-sec{
+    display: flex;
+    padding-top: 20px;
+    padding-left: 20px;
+  }
+  #names{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 20px 20px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .show {
+    display: block;
+  }
+  #log-butt{
+    border-style: none;
+    width: 92%;
+    padding-top: 14px;
+    padding-bottom: 12px; 
+    margin-left: 10px; 
+    font-size: 20px;
+    background-color: #f9f9f9;
+    text-align: left;
+  }
+  #log-butt:hover{
+    background-color: #FF007F;
+    color: white;
+
+  }
+  .fa{
+    font-size: 20px;
+    margin-right: 20px;
+  }
+
+  #addstocks{
+    display: flex;
+    justify-content: space-between  ;
+  }
+  #add-butt{
+    border-style: none;
+    background-color: #FF007F;
+    padding: 10px 30px;
+    margin: 20px 40px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    
+  }
+  #inventory{
+    border: solid #000 1px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    width: 550px;
+    height: 70vh;
+    margin-left: 40px;
+    border-radius: 10px;
+  }
+
+  #texting{
+    text-align: center;
+    font-family: sans-serif;
+    margin-bottom: 50px;
+  }
+  #nodata-img{
+    padding: 150px;
+  }
+  #tunga{
+    display: flex;
+    margin-top: 40px;
+  }
+  #border, #borders{
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border-style: none;
+    border: solid #000 1px;
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+
+  #borders{
+    background-color: #FF007F;
+    border-color: #FF007F;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 10px;
+  }
+ 
+  #calendar{
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border-style: none;
+    border: solid #000 1px;
+  }
+  #dalagan{
+    height: 60px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 20px;
+  }
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: #44A130;
+    color: white;
+  }
+  table {
+    width: 100%; 
+    margin: 0 auto;/* Optional: make the table take up the full width of its container */
+    border-collapse: collapse; /* Optional: merge table borders for a cleaner look */
+}
+td {
+  text-align: center; /* Center the content inside table cells */
+  padding: 8px; /* Optional: Add padding for better spacing */
+}
+
+  #section1{
+    justify-content: center;
+    padding: 0px 40px;
+  }
+  #return{
+    padding: 9px 20px;
+    border-radius: 20px;
+    border-style: none;
+    border: solid #000 1px;
+    font-family: sans-serif;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/inventories.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Add Stocks</title>
+  </head>
+  <body>
+    <header class="py-1">
+      <nav id="navbar">
+          <div id="logo2"><h1 id="LIBREMEDISINA">
+              <span class="green-text">#</span>
+              <span class="pink-text">LIBRE</span>
+              <span class="green-text">MEDISINA</span>
+          </h1></div>
+           <!-- Logout icon -->
+           <div class="dropdown">
+            <img class="dropbtn" onclick="toggleDropdown()" src="/images/profile.png" alt="">
+            <div id="dropdownContent" class="dropdown-content">
+                <div id="profile-sec">
+                  <div id="meow">
+                    <img id="profile2" src="/images/profile.png" alt="">
+                  </div>
+                  <div id="names">
+                    <p class=" infos" id="info"><%= username %></p>
+                  <p class="infor" id="info"><%= userType %></p>
+                  </div>              
+                </div>
+                <hr>
+                <form action="/logout?_method=DELETE" method="POST">
+                  <button id="log-butt" type="submit"><i class="fa fa-sign-out-alt"></i> Log out</button>
+                </form>
+            </div>
+          </div>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <div id="tunga">
+          <div>           
+            <form id="inventory" action="addstocks" method="POST">
+              <!-- Updated action -->
+              <h1 id="texting">ADD MEDICINE</h1>
+              <input id="border" type="text" placeholder="Generic name" name="itemName" required />
+              <input id="border" type="text" placeholder="Brand name" name="brand" required />
+              <input
+              id="border"
+                type="text"
+                placeholder="Manufacturer"
+                name="manufacturer"
+                required
+              />
+              <input id="border" type="text" placeholder="Dosage" name="dosage" required />
+              <input id="calendar" type="date" name="expiration" required />
+              <input
+                id="border"
+                type="number"
+                placeholder="Quantity"
+                name="quantity"
+                required
+              />
+              <br />
+              <button id="borders" type="submit">Add Medicine</button>
+              <button id="return" onclick="window.location.href='/'">Return</button>
+            </form>
+          </div>
+          <div id="section1">
+            <table id="customers">
+              <thead>
+                <tr class="headering">
+                  <th>Item Name</th>
+                  <th>Brand Name</th>
+                  <th>Manufacturer</th>
+                  <th>Dosage</th>
+                  <th>Expiration</th>
+                  <th>Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% if (viewList && viewList.length > 0) { %> <% viewList.forEach(item =>
+                { %>
+                <tr>
+                  <td><%= item.itemName %></td>
+                  <td><%= item.brand %></td>
+                  <td><%= item.manufacturer %></td>
+                  <td><%= item.dosage %></td>
+                  <td><%= item.expiration %></td>
+                  <td><%= item.quantity %></td>
+                </tr>
+                <% }) %> <% } else { %>
+                <tr id="nodata">
+                  <td id="nodata-img" colspan="6"> <img style="height: 140px;" src="/images/nodata.png" alt=""> <br> No items found.  <a href="/">return</a></td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </div>
+          <div>
+              
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/java/index.js"></script>
+  </body>
+</html>

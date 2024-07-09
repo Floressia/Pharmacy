@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <title>Login</title>
+  </head>
+  <body>
+    <!---------------------------MAIN LOGIN FORM---------------------------------------------->
+    <main id="login-form">
+    <form id="rectang" action="/login" method="POST">
+      <div id="Login-input">
+        <div id="logo2"><h1 id="LIBREMEDISINA">
+          <span class="green-text">#</span>
+          <span class="pink-text">LIBRE</span>
+          <span class="green-text">MEDISINA</span>
+        </h1></div>
+        <h2 id="h2login">SIGN-IN</h2>
+          <div id="message">
+            <% if (messages.error) { %>
+            <div><%= messages.error %></div>
+            <% } %>
+          </div>
+          <!---------------------------USERNAME---------------------------------------------->
+          <input id="username" placeholder="Enter your username" type="text" name="username" required  />
+          <!---------------------------PASSWORD---------------------------------------------->
+            <input id="password" placeholder="Enter your password" type="password" name="password" required />
+            <!---------------------------LOGIN BUTTON---------------------------------------------->
+            <button id="LOG-BUTT" type="submit">Login</button>
+      </div>
+    </form>
+    <!---------------------------LOGO'S---------------------------------------------->
+    <div id="logos">
+      <img id="essu" src="/images/android-chrome-192x192.png" alt="">
+      <img id="essu" src="/images/android-chrome-512x512.png" alt="">
+      <img id="essu" src="/images/android-chrome-512x511.png" alt="">
+      <img id="essu" src="/images/android-chrome-512x514.png" alt="">
+  </div>
+  <!---------------------------CONTRIBUTORS---------------------------------------------->
+  <div id="semi-footer">
+      <p>All rights reserved 2024</p>
+  </div>
+  </main>
+  </body>
+</html>

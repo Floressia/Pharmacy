@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request</title>
+    <link rel="stylesheet" href="/css/request.css">
+  </head>
+  <body>
+
+<!------------------------HEADER----------------------------------->
+<header class="py-1">
+  <nav id="navbar">
+      <div id="logo2"><h1 id="LIBREMEDISINA">
+          <span class="green-text">#</span>
+          <span class="pink-text">LIBRE</span>
+          <span class="green-text">MEDISINA</span>
+      </h1></div>
+       <!-- Logout icon -->
+       <div class="dropdown">
+        <img class="dropbtn" onclick="toggleDropdown()" src="/images/profile.png" alt="">
+        <div id="dropdownContent" class="dropdown-content">
+            <div id="profile-sec">
+              <div id="meow">
+                <img id="profile2" src="/images/profile.png" alt="">
+              </div>
+              <div id="names">
+                <p class=" infos" id="info"><%= username %></p>
+              <p class="infor" id="info"><%= userType %></p>
+              </div>              
+            </div>
+            <hr>
+            <!---------------------------LOGOUT BUTTON---------------------------------------------->
+            <form action="/logout?_method=DELETE" method="POST">
+              <button id="log-butt" type="submit"><i class="fa fa-sign-out-alt"></i> Log out</button>
+            </form>
+        </div>
+      </div>
+  </nav>
+</header>
+<!--------------------------ADDING REQUEST------------------------------------->
+    <form action="/addrequest" method="POST" enctype="multipart/form-data">
+      <div id="information-container">
+        <div id="patient">
+          <h1>PATIENTS INFORMATION</h1>
+        <input type="text" name="pt_name" placeholder="Name" required />
+        <input type="number" name="pt_age" placeholder="Age" required />
+        <input type="text" name="pt_gender" placeholder="Gender" required />
+        <input type="text" name="pt_contact" placeholder="Contact No" required />
+        <input type="text" name="pt_address" placeholder="Address" required />
+        <input type="file" name="pt_prescription" required/>
+        </div>
+
+        <div id="recipient">
+          <h1>RECIPIENT INFORMATION</h1>
+        <input type="text" name="rp_name" placeholder="Name" required />
+        <input type="number" name="rp_age" placeholder="Age" required />
+        <input type="text" name="rp_relationship" placeholder="Relationship" required />
+        <input type="text" name="rp_contact" placeholder="Contact No" required />
+        <input type="text" name="rp_address" placeholder="Address" required />
+        <input type="file" name="rp_valid_id" required />
+        </div>
+      </div>
+      <div id="sheesh">
+        <button id="return" onclick="window.location.href='/'">Return</button>
+        <button id="submit-butt" type="submit">Submit</button>
+      </div>
+    </form>
+    <script src="/java/index.js"></script>
+  </body>
+</html>

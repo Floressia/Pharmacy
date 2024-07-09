@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/records.css">
+    <title>Records</title>
+    <style>
+      .buttons {
+        margin: 20px 0;
+      }
+      button {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!------------------------HEADER----------------------------------->
+    <header class="py-1">
+      <nav id="navbar">
+          <div id="logo2"><h1 id="LIBREMEDISINA">
+              <span class="green-text">#</span>
+              <span class="pink-text">LIBRE</span>
+              <span class="green-text">MEDISINA</span>
+          </h1></div>
+           <!-- Logout icon -->
+           <div class="dropdown">
+            <img class="dropbtn" onclick="toggleDropdown()" src="/images/profile.png" alt="">
+            <div id="dropdownContent" class="dropdown-content">
+                <div id="profile-sec">
+                  <div id="meow">
+                    <img id="profile2" src="/images/profile.png" alt="">
+                  </div>
+                  <div id="names">
+                    <p class=" infos" id="info"><%= username %></p>
+                  <p class="infor" id="info"><%= userType %></p>
+                  </div>              
+                </div>
+                <hr>
+                <form action="/logout?_method=DELETE" method="POST">
+                  <button id="log-butt" type="submit"><i class="fa fa-sign-out-alt"></i> Log out</button>
+                </form>
+            </div>
+          </div>
+      </nav>
+    </header>
+
+    <!---------------BUTTONS------------------------------------------->
+    <div id="buttones">
+      <button id="download" onclick="window.location.href='/records/download'">Download CSV</button>
+      <button id="recordsTable" onclick="printTable()">Print CSV</button>
+    </div>
+
+    <!---------------TABLE--------------------------------------------------->
+    <div id="section1">
+      <table id="customers">
+        <thead id="">
+          <tr id="headering">
+            <th>Transaction ID</th>
+            <th>Patiant name</th>
+            <th>Representative name</th>
+            <th>Relationship</th>
+            <th>Patient gender</th>
+            <th>Patient Age</th>
+            <th>Contact no.</th>
+            <th>Address</th>
+            <th>Medicine</th>
+            <th>Brand</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (viewListPatientsRecords && viewListPatientsRecords.length > 0) { %>
+          <% viewListPatientsRecords.forEach(item => { %>
+          <tr>
+            <td><%= item.rq_id %></td>
+            <td><%= item.pt_name %></td>
+            <td><%= item.rp_name %></td>
+            <td><%= item.rp_relationship %></td>
+            <td><%= item.pt_gender %></td>
+            <td><%= item.pt_age %></td>
+            <td><%= item.pt_contact %></td>
+            <td><%= item.pt_address %></td>
+            <td><%= item.item_name %></td>
+            <td><%= item.brand %></td>
+            <td><%= item.quantity %></td>
+          </tr>
+          <% }) %>
+          <% } else { %>
+            <tr id="nodata">
+              <td id="nodata-img" colspan="11"> <img style="height: 140px;" src="/images/nodata.png" alt=""> <br> No items found.  <a href="/">return</a></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      function printTable() {
+        const table = document.getElementById('recordsTable').outerHTML;
+        const newWindow = window.open('', '', 'width=800,height=600');
+        newWindow.document.write('<html><head><title>Print CSV</title></head><body>');
+        newWindow.document.write(table);
+        newWindow.document.write('</body></html>');
+        newWindow.document.close();
+        newWindow.print();
+      }
+    </script>
+    <script src="/java/index.js"></script>
+  </body>
+</html>
